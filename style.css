@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+body {
+	height: 100dvh;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	background-color: #292a2d;
+	color: #e5e5e5;
+	font-size: 2.2em;
+	overflow: hidden;
+	animation-duration: 2s;
+	animation-delay: 1s;
+	animation-fill-mode: forwards;
+	font-family: "Roboto";
+}
+
+#player {
+	display: none;
+}
+
+.guard,
+#background {
+	position: fixed;
+	display: none;
+	top: 0;
+	left: 0;
+	background-color: transparent;
+	width: 100dvw;
+	height: 100dvh;
+}
+
+#background {
+	display: block;
+	z-index: -1;
+}
+
+.text {
+	min-height: 2.2em;
+}
+
+@keyframes lights {
+	to {
+		background-color: white;
+		color: black;
+	}
+}
+
+.text button {
+	border: none;
+	background-color: transparent;
+	color: rgb(32, 31, 31);
+	font-size: unset;
+	background-color: #7fff00;
+	border-radius: 4%;
+}
+
+.text input {
+	position: absolute;
+	left: 20%;
+	right: 20%;
+}
+
+.text button {
+	cursor: pointer;
+	z-index: 999999;
+}
+.text button:hover {
+	cursor: pointer;
+	background-color: #8fd14d;
+	z-index: 999999;
+}
+
+.magic_text {
+	font-weight: bold;
+	background: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 1) 50%,
+		rgba(249, 255, 0, 1) 50%,
+		rgba(173, 227, 214, 1) 50%,
+		rgba(0, 255, 175, 1) 67%,
+		rgba(0, 255, 218, 1) 78%,
+		rgba(0, 255, 252, 1) 87%,
+		rgba(0, 255, 175, 1) 99%
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-size: 200% auto;
+	background-position: -200% 50%;
+}
+
+iframe {
+	pointer-events: none;
+}
+
+.text {
+	height: 2em;
+	margin-top: 0.2em;
+}
+
+.comment-box {
+	z-index: 9999;
+	visibility: hidden;
+}
+.comment-box form {
+	background-color: #3f3b3b;
+
+	display: flex;
+
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+		rgba(0, 0, 0, 0.857) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+	z-index: 99999;
+	border: 1px solid #828281;
+	border-radius: 0.5rem;
+	color: white;
+	height: 1em;
+	width: 40rem;
+}
+
+.comment-box form * {
+	color: white;
+	outline: none;
+	border: none;
+	background-color: transparent;
+}
+
+.comment-box form input {
+	width: 100%;
+	margin-left: 1em;
+}
+.comment-box form button {
+	width: 5rem;
+}
+.comment-box form button:hover {
+	color: antiquewhite;
+	cursor: pointer;
+}
+
+.comments {
+	display: flex;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100dvh;
+	width: 100dvw;
+	visibility: hidden;
+	-webkit-text-stroke: 0.02em #000000;
+}
+
+.comments .drop_comment {
+	position: absolute;
+	animation: raindrop 5s linear forwards;
+	color: yellow !important;
+}
+
+.shaky {
+	animation: shake 0.5s infinite;
+}
+
+a {
+	color: #7fff00;
+}
+
+/* #container,
+#welcome {
+	width: 100dvw;
+	height: 100dvh;
+} */
+
+@keyframes raindrop {
+	0% {
+		transform: translateY(0dvh);
+		opacity: 1.5;
+	}
+	100% {
+		transform: translateY(100dvh);
+		opacity: 1;
+	}
+}
+
+@keyframes shake {
+	0% {
+		transform: translate(1px, 1px) rotate(0deg);
+	}
+	10% {
+		transform: translate(-1px, -2px) rotate(-1deg);
+	}
+	20% {
+		transform: translate(-3px, 0px) rotate(1deg);
+	}
+	30% {
+		transform: translate(3px, 2px) rotate(0deg);
+	}
+	40% {
+		transform: translate(1px, -1px) rotate(1deg);
+	}
+	50% {
+		transform: translate(-1px, 2px) rotate(-1deg);
+	}
+	60% {
+		transform: translate(-3px, 1px) rotate(0deg);
+	}
+	70% {
+		transform: translate(3px, 1px) rotate(-1deg);
+	}
+	80% {
+		transform: translate(-1px, -1px) rotate(1deg);
+	}
+	90% {
+		transform: translate(1px, 2px) rotate(0deg);
+	}
+	100% {
+		transform: translate(1px, -2px) rotate(-1deg);
+	}
+}
+
+@keyframes bounce {
+	0% {
+		top: 0;
+	}
+	48% {
+	}
+	50% {
+		top: calc(100% - var(--height));
+	}
+	52% {
+	}
+	100% {
+		top: 0;
+	}
+}
+
+@keyframes toRight {
+	0% {
+		left: 0;
+	}
+
+	100% {
+		left: calc(100% - var(--width));
+	}
+}
