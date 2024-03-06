@@ -56,7 +56,7 @@ function dia_3(elm) {
 		"I'll tell you when it loads",
 		" ",
 	];
-	println(phrases, dia_4, 50);
+	println(phrases, dia_4, 60);
 }
 
 function dia_4() {
@@ -80,6 +80,7 @@ function dia_5() {
 		() => {
 			setTimeout(() => {
 				// typed3.stop();
+				player.setVolume(50);
 				player.playVideo();
 				setTimeout(() => {
 					failed();
